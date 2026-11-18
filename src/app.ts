@@ -4,6 +4,7 @@ import type { Request, Response } from "express";
 
 import authRoutes from "./modules/auth/auth.routes.js";
 import userRoutes from "./modules/users/users.routes.js";
+import shopRoutes from "./modules/shops/shops.routes.js";
 
 const app = express();
 
@@ -23,5 +24,7 @@ app.get("/health", (_req, res) => {
 app.use("/api/auth", authRoutes);
 
 app.use("/api/users", userRoutes);
+
+app.use("/api/shops", shopRoutes);
 
 export default app;
